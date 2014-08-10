@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper,oneside,norsk]{article} 
+\usepackage[utf8]{inputenc}
+%\usepackage[norsk]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{verbatim} %for å kommentere ut ting
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{chngpage} % allows for temporary adjustment of side margins
+\usepackage[parfill]{parskip} %for avsnitt
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{comment} 
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+
+\raggedbottom
+
+\setlength{\marginparwidth}{1.2in}
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft #1]%
+{\raggedright #1}}    
+
+\newenvironment{checklist}{%
+  \begin{list}{}{}% whatever you want the list to be
+  \let\olditem\item
+  \renewcommand\item{\olditem -- \marginpar{$\Box$} }
+  \newcommand\checkeditem{\olditem -- \marginpar{$\CheckedBox$} }
+}{%
+  \end{list}
+}   
+
+\begin{document}
+\textbf{OVERSKRIFT}
+\begin{minipage}[t][5cm][b]{0,5\textwidth}
+vcf
+
+\begin{checklist}[h!]
+ \item   Open the book
+ \item   Find the good page
+ \item   Try to understand
+\end{checklist}
+
+ \end{minipage}
+ 
+\end{document}
