@@ -1,51 +1,75 @@
-\documentclass[12pt,a4paper,oneside,norsk]{article} 
+\documentclass[a4paper,notitlepage]{article}
 \usepackage[utf8]{inputenc}
-%\usepackage[norsk]{babel}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{makeidx}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\usepackage{float}
-\usepackage{multirow}
-\usepackage{verbatim} %for å kommentere ut ting
-\usepackage[nottoc,numbib]{tocbibind}
-\usepackage{chngpage} % allows for temporary adjustment of side margins
 \usepackage[parfill]{parskip} %for avsnitt
-\usepackage[yyyymmdd,hhmmss]{datetime}
-\usepackage{comment} 
-\usepackage{caption}
-\captionsetup[figure]{labelformat=empty}
+\usepackage{graphicx}
+\usepackage[twocolumn]{geometry}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage[export]{adjustbox}  % draw frame of the image
+\geometry{verbose,tmargin=1cm,bmargin=1cm,lmargin=1cm,rmargin=1cm,headheight=1cm,headsep=1cm,footskip=1cm}
 
-\raggedbottom
+\usepackage{wasysym}
 
-\setlength{\marginparwidth}{1.2in}
-\let\oldmarginpar\marginpar
-\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft #1]%
-{\raggedright #1}}    
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{0.5in}
 
-\newenvironment{checklist}{%
-  \begin{list}{}{}% whatever you want the list to be
-  \let\olditem\item
-  \renewcommand\item{\olditem -- \marginpar{$\Box$} }
-  \newcommand\checkeditem{\olditem -- \marginpar{$\CheckedBox$} }
-}{%
-  \end{list}
-}   
+\newcommand\noncheckeditem[1]{\item[--] #1 \hfill $\Box$}%
+\newcommand\checkeditem[1]{\item[--] #1 \hfill $\CheckedBox$}%
 
 \begin{document}
-\textbf{OVERSKRIFT}
-\begin{minipage}[t][5cm][b]{0,5\textwidth}
-vcf
 
-\begin{checklist}[h!]
- \item   Open the book
- \item   Find the good page
- \item   Try to understand
-\end{checklist}
+\textbf{\Large Adresse:} \\
 
- \end{minipage}
- 
-\end{document}
+\underline{\large Elektrisk:} 
+\begin{description}
+  \noncheckeditem{Open the \TeX book}
+  \noncheckeditem{Find the good page}
+  \noncheckeditem{Try to understand}
+\end{description}
+
+\newpage
+
+\begin{description}
+  \noncheckeditem{Open the \TeX book}
+  \noncheckeditem{Find the good page}
+  \noncheckeditem{Try to understand}
+\end{description}
+\textbf{\large Kommentarer:} 
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+\vskip\medskipamount % or other desired dimension
+\leaders\vrule width \textwidth\vskip0.4pt % or other desired thickness
+\vskip\medskipamount % ditto
+\nointerlineskip
+
+\textbf{\Large Takst:} \\
+\textbf{\Large Fellesgjeld:} \\
+\textbf{\Large Totalpris:} \\
+
+\textbf{\Large Maksbud:}\\
+
+\end{document} 
